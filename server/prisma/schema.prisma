@@ -23,16 +23,18 @@ model Character {
   buildDetails      String
   strategy          String?
   
-  // Status de Treino
+  // Status
   speed             String?
   stamina           String?
   power             String?
   guts              String?
   wisdom            String?
   
-  // Guia de Elite (Skills e Cards)
+  // Guia com Imagens (Strings separadas por vírgula para os nomes e para os ícones)
   recommendedSkills String?
+  skillIcons        String? // Links das imagens das skills
   supportCards      String?
+  cardIcons         String? // Links das imagens dos cards
   
   sourceName        String
   sourceUrl         String
