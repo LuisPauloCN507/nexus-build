@@ -16,22 +16,26 @@ model Game {
 }
 
 model Character {
-  id           String   @id @default(uuid())
-  name         String
-  tier         String
-  imageUrl     String
-  buildDetails String
-  strategy     String?
+  id                String   @id @default(uuid())
+  name              String
+  tier              String
+  imageUrl          String
+  buildDetails      String
+  strategy          String?
   
-  // Status para a Versão Global
-  speed        String?  @default("Low")
-  stamina      String?  @default("Low")
-  power        String?  @default("Low")
-  guts         String?  @default("Low")
-  wisdom       String?  @default("Low")
+  // Status de Treino
+  speed             String?
+  stamina           String?
+  power             String?
+  guts              String?
+  wisdom            String?
   
-  sourceName   String
-  sourceUrl    String
-  game         Game     @relation(fields: [gameId], references: [id])
-  gameId       String
+  // Guia de Elite (Skills e Cards)
+  recommendedSkills String?
+  supportCards      String?
+  
+  sourceName        String
+  sourceUrl         String
+  game              Game     @relation(fields: [gameId], references: [id])
+  gameId            String
 }
