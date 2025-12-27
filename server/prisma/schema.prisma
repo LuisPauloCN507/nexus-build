@@ -18,11 +18,12 @@ model Game {
 model Character {
   id           String   @id @default(uuid())
   name         String
+  tier         String
   imageUrl     String
-  tier         String   
-  buildDetails String   
-  sourceName   String   
-  sourceUrl    String   
-  gameId       String
+  buildDetails String
+  strategy     String?  // Campo da estratégia de corrida
+  sourceName   String
+  sourceUrl    String
   game         Game     @relation(fields: [gameId], references: [id])
+  gameId       String
 }
