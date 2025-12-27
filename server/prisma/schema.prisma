@@ -21,7 +21,15 @@ model Character {
   tier         String
   imageUrl     String
   buildDetails String
-  strategy     String?  // Campo da estratégia de corrida
+  strategy     String?
+  
+  // Status para a Versão Global
+  speed        String?  @default("Low")
+  stamina      String?  @default("Low")
+  power        String?  @default("Low")
+  guts         String?  @default("Low")
+  wisdom       String?  @default("Low")
+  
   sourceName   String
   sourceUrl    String
   game         Game     @relation(fields: [gameId], references: [id])
